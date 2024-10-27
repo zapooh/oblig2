@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import dynamic from 'next/dynamic';
 
 interface Todo {
   id: number;
   title: string;
   completed: boolean;
 }
+
+const BackgroundImage = dynamic(() => import('../components/BackgroundImage'), {
+  ssr: false
+});
 
 export default function Home() {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -86,15 +91,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12 relative">
       <div className="absolute inset-0 z-0 bg-gray-200">
-        <Image
-          src="/cherry-blossom-bg.webp"
-          alt="Cherry Blossom Background"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-          placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
-        />
+        <BackgroundImage />
       </div>
       <div className="relative z-10">
         <Head>
