@@ -9,7 +9,7 @@ interface Todo {
   completed: boolean;
 }
 
-const BackgroundImage = dynamic(() => import('../components/BackgroundImage'), {
+const BackgroundImage = dynamic(() => import('../components/'), {
   ssr: false
 });
 
