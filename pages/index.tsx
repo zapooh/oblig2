@@ -85,13 +85,17 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12 relative">
-      <Image
-        src="/cherry-blossom-bg.jpg"
-        alt="Cherry Blossom Background"
-        layout="fill"
-        objectFit="cover"
-        quality={100}
-      />
+      <div className="absolute inset-0 z-0 bg-gray-200">
+        <Image
+          src="/cherry-blossom-bg.webp"
+          alt="Cherry Blossom Background"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
+        />
+      </div>
       <div className="relative z-10">
         <Head>
           <title>Todo App</title>
