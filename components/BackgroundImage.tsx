@@ -1,15 +1,10 @@
-import Image from 'next/image';
+import styles from './BackgroundImage.module.css';
 
 const BackgroundImage = () => (
-  <Image
-    src="/cherry-blossom-bg.webp"
-    alt="Cherry Blossom Background"
-    layout="fill"
-    objectFit="cover"
-    quality={100}
-    onError={(e) => {
-      console.error("Error loading image:", e);
-    }}
+  <div 
+    className={styles.backgroundImage}
+    role="img"
+    aria-label="Cherry Blossom Background"
   />
 );
 

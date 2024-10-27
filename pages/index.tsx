@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
 interface Todo {
   id: number;
@@ -9,8 +9,8 @@ interface Todo {
   completed: boolean;
 }
 
-const BackgroundImage = dynamic(() => import('../components/'), {
-  ssr: false
+const BackgroundImage = dynamic(() => import("../components/BackgroundImage"), {
+  ssr: false,
 });
 
 export default function Home() {
